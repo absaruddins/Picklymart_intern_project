@@ -1,19 +1,17 @@
-/* ===== COLORS: stored here so they are easy to change later ===== */
+
 :root {
-  --green: #1e4d3f;       /* navbar and button color */
-  --light-green: #7ac143; /* highlight color */
-  --dark: #1c1e2b;        /* footer background */
+  --green: #1e4d3f;       
+  --light-green: #7ac143; 
+  --dark: #1c1e2b;       
 }
 
-/* Font for the whole page (Arial is the backup if Public Sans fails to load) */
+
 body {
   font-family: 'Public Sans', Arial, sans-serif;
 }
 
 /* ===== NAVBAR ===== */
-/* Keep the navbar visible while scrolling.
-   We make the wrapper div (id="navbar") sticky, because the <nav> is inside it.
-   top: 0 = stick to the top edge, z-index = stay above the page content */
+
 #navbar {
   position: sticky;
   top: 0;
@@ -40,22 +38,22 @@ body {
   margin: 40px auto;
   max-width: 900px;
 }
-/* Round icon next to address, phone and email */
+/* Round icon  */
 .round-icon {
   width: 36px;
   height: 36px;
   border: 1px solid #aaa;
-  border-radius: 50%;           /* 50% makes it a circle */
+  border-radius: 50%;           
   display: flex;
   align-items: center;
   justify-content: center;
   background: white;
 }
-/* Hover effect for address, phone and email */
+/* Hover effect  */
 .info-item {
   cursor: pointer;
 }
-/* Hidden by default: no height and invisible */
+
 .info-detail {
   display: block;
   max-height: 0;
@@ -63,13 +61,13 @@ body {
   overflow: hidden;
   transition: max-height 0.3s, opacity 0.3s;
 }
-/* Shown when the mouse is over the row (or when it is selected with the Tab key) */
+
 .info-item:hover .info-detail,
 .info-item:focus .info-detail {
   max-height: 60px;
   opacity: 1;
 }
-/* Phones and tablets have no mouse, so always show the details there */
+
 @media (hover: none) {
   .info-detail {
     max-height: 60px;
@@ -77,7 +75,7 @@ body {
   }
 }
 
-/* White box around the form */
+
 .form-box {
   background: white;
   border: 1px solid #ddd;
@@ -85,7 +83,7 @@ body {
   padding: 20px;
 }
 
-/* Green button */
+
 .btn-green {
   background-color: var(--green);
   color: white;
@@ -144,7 +142,7 @@ body {
   padding: 70px 0;
 }
 
-/* Keep the footer at the bottom of the page, even on short pages */
-/* min-height (not height) is important, otherwise the sticky navbar stops working after one screen */
+/* responsive */
+
 body { min-height: 100vh; display: flex; flex-direction: column; }
 main { flex: 1; }
