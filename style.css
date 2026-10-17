@@ -141,7 +141,34 @@ body {
   color: white;
   padding: 70px 0;
 }
+/* ===== SEARCH ===== */
+.search-wrapper {
+  position: relative;
+}
+.search-box {
+  position: absolute;
+  top: 35px;
+  right: 0;
+  width: 280px;
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 1040;
+}
+.search-result {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+  color: black;
+}
 
+/* On mobile, open the box to the right of the icon */
+@media (max-width: 991.98px) {
+  .search-box {
+    left: 0;
+    right: auto;
+  }
+}
 /* responsive */
 
 body { min-height: 100vh; display: flex; flex-direction: column; }

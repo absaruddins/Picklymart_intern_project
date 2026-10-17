@@ -41,10 +41,17 @@ function loadFile(fileName, divId) {
 }
 
 // Load both files, then update the navbar
+// Promise.all([
+//   loadFile("navbar.html", "navbar"),
+//   loadFile("footer.html", "footer")
+// ]).then(updateNavbar);
 Promise.all([
   loadFile("navbar.html", "navbar"),
   loadFile("footer.html", "footer")
-]).then(updateNavbar);
+]).then(function () {
+  updateNavbar();
+  initSearch();   // start search after the navbar is loaded
+});
 
 
 // ===== Update the navbar (Login/Registration OR Logout) =====
@@ -167,5 +174,44 @@ if (contactForm) {
     alert("Message sent successfully!");
     contactForm.reset();
     contactForm.classList.remove("was-validated");
+  });
+}
+
+// ===== Search =====
+
+// The names we can search for
+const items = ["TestShop", "Sohel Mart", "Shahin Store", "Mango Pickle", "Honey"];
+
+function initSearch() {
+  const icon = document.getElementById("searchIcon");
+  const box = document.getElementById("searchBox");
+  const input = document.getElementById("searchInput");
+  const results = document.getElementById("searchResults");
+
+  // Click the icon: show or hide the search box
+  icon.addEventListener("click", function () {
+    box.classList.toggle("d-none");
+    input.focus();
+  });
+
+  // When the user types: show the matching names
+  input.addEventListener("input", function () {
+    const text = input.value.toLowerCase();
+    results.innerHTML = "";
+
+    if (text === "") return;   // nothing typed, show nothing
+
+    const found = items.filter(function (name) {
+      return name.toLowerCase().includes(text);
+    });
+
+    if (found.length === 0) {
+      results.innerHTML = '<div class="search-result">No results found</div>';
+      return;
+    }
+
+    found.forEach(function (name) {
+      results.innerHTML += '<div class="search-result">' + name + '</div>';
+    });
   });
 }

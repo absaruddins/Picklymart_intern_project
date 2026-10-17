@@ -26,7 +26,15 @@
       <!-- Right side buttons -->
       <div class="d-flex flex-column flex-lg-row gap-3 align-items-lg-center">
         <a href="#" class="btn btn-outline-light btn-sm rounded-pill">Join as Seller</a>
-        <a href="#" class="text-white"><i class="bi bi-search"></i></a>
+          <!-- Search icon and the box that opens when it is clicked -->
+  <div class="search-wrapper">
+    <button id="searchIcon" class="btn p-0 text-white"><i class="bi bi-search"></i></button>
+
+    <div id="searchBox" class="search-box d-none">
+      <input type="text" id="searchInput" class="form-control" placeholder="Search...">
+      <div id="searchResults"></div>
+    </div>
+  </div>
         <a href="#" class="text-white text-decoration-none"><i class="bi bi-cart3"></i> ৳0.00 (0 items)</a>
 
         <!-- Shown when the user is NOT logged in -->
