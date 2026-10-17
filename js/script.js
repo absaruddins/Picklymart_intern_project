@@ -73,7 +73,7 @@ function updateNavbar() {
 function showMessage(text) {
   const box = document.getElementById("message");
   box.textContent = text;
-  box.classList.remove("d-none");   // make the message box visible
+  box.classList.remove("d-none");   
 }
 
 
