@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- This line is required to make the page responsive on mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons (for the icons) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Google Font: Public Sans (matches the original design) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Our own CSS -->
+  <link rel="stylesheet" href="style.css">
+  <title>Login - Picklymart</title>
+</head>
+<!-- data-guest="true" = if the user is already logged in, send them to the home page -->
+<body data-guest="true">
+
+  <!-- navbar.html will be placed here -->
+  <div id="navbar"></div>
+
+  <main>
+    <div class="container px-3">
+      <form id="loginForm" class="auth-box" novalidate>
+        <h2 class="mb-4">Login</h2>
+
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control mb-3" placeholder="Enter Email" required>
+
+        <!-- minlength="6" = the password must have at least 6 characters -->
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control mb-3" placeholder="Enter Password" minlength="6" required>
+
+        <!-- Error message box (hidden until script.js shows it) -->
+        <div id="message" class="alert alert-danger d-none"></div>
+
+        <button type="submit" class="btn btn-green w-100">Login</button>
+
+        <p class="text-center mt-3 mb-0">
+          Don't have an account? <a href="register.html">Register here</a>
+        </p>
+      </form>
+    </div>
+  </main>
+
+  <!-- footer.html will be placed here -->
+  <div id="footer"></div>
+
+  <!-- Bootstrap JS (needed for the hamburger menu) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Our own JS (loads navbar and footer) -->
+  <script src="js/script.js"></script>
+</body>
+</html>
